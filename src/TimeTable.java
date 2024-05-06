@@ -35,7 +35,7 @@ public class TimeTable extends JFrame implements ActionListener {
     public void setTools() {
         String[] capField = new String[]{"Slots:", "Courses:", "Clash File:", "Iters:", "Shift:"};
         this.field = new JTextField[capField.length];
-        String[] capButton = new String[]{"Load", "Start", "Step", "Print", "Exit"};
+        String[] capButton = new String[]{"Load", "Start","Continue", "Step", "Print", "Exit"};
         this.tool = new JButton[capButton.length];
         this.tools.setLayout(new GridLayout(2 * capField.length + capButton.length, 1));
 
@@ -110,10 +110,29 @@ public class TimeTable extends JFrame implements ActionListener {
                 this.setVisible(true);
                 break;
             case 2:
+                 min = 2147483647;
+                 step = 0;
+
+                for(iteration = 1; iteration <= Integer.parseInt(this.field[3].getText()); ++iteration) {
+                    this.courses.iterate(Integer.parseInt(this.field[4].getText()));
+                    this.draw();
+                    int clashes = this.courses.clashesLeft();
+                    if (clashes < min) {
+                        min = clashes;
+                        step = iteration;
+                    }
+
+                }
+
+                System.out.println("Shift = " + this.field[4].getText() + "\tMin clashes = " + min + "\tat step " + step);
+                this.setVisible(true);
+
+                break;
+            case 3:
                 this.courses.iterate(Integer.parseInt(this.field[4].getText()));
                 this.draw();
                 break;
-            case 3:
+            case 4:
                 System.out.println("Exam\tSlot\tClashes");
 
                 for(iteration = 1; iteration < this.courses.length(); ++iteration) {
@@ -121,7 +140,7 @@ public class TimeTable extends JFrame implements ActionListener {
                 }
 
                 return;
-            case 4:
+            case 5:
                 System.exit(0);
         }
 
