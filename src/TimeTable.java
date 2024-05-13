@@ -1,152 +1,210 @@
-
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
+import javax.swing.*;
 
 public class TimeTable extends JFrame implements ActionListener {
-    private JPanel screen = new JPanel();
-    private JPanel tools = new JPanel();
-    private JButton[] tool;
-    private JTextField[] field;
+
+    private JPanel screen = new JPanel(), tools = new JPanel();
+    private JButton tool[];
+    private JTextField field[];
     private CourseArray courses;
-    private Color[] CRScolor;
+    private Color CRScolor[] = {Color.RED, Color.GREEN, Color.BLACK};
+
+    private Autoassociator autoassociator;
+    int min = Integer.MAX_VALUE, step;
+    int iterations = 0;
+    Random random;
 
     public TimeTable() {
         super("Dynamic Time Table");
-        this.CRScolor = new Color[]{Color.RED, Color.GREEN, Color.BLACK};
-        this.setSize(500, 800);
-        this.setLayout(new FlowLayout());
-        this.screen.setPreferredSize(new Dimension(400, 800));
-        this.add(this.screen);
-        this.setTools();
-        this.add(this.tools);
-        this.setVisible(true);
+        setSize(500, 800);
+        setLayout(new FlowLayout());
+        screen.setPreferredSize(new Dimension(400, 800));
+        add(screen);
+        setTools();
+        add(tools);
+        random = new Random();
+        setVisible(true);
     }
 
     public void setTools() {
-        String[] capField = new String[]{"Slots:", "Courses:", "Clash File:", "Iters:", "Shift:"};
-        this.field = new JTextField[capField.length];
-        String[] capButton = new String[]{"Load", "Start","Continue", "Step", "Print", "Exit"};
-        this.tool = new JButton[capButton.length];
-        this.tools.setLayout(new GridLayout(2 * capField.length + capButton.length, 1));
+        String capField[] = {"Slots:", "Courses:", "Clash File:", "Iters:", "Shift:"};
+        field = new JTextField[capField.length];
 
-        int i;
-        for(i = 0; i < this.field.length; ++i) {
-            this.tools.add(new JLabel(capField[i]));
-            this.field[i] = new JTextField(5);
-            this.tools.add(this.field[i]);
+        String capButton[] = {"Load", "Start", "Cont", "Step", "Train", "Update" , "Print", "Exit"};
+        tool = new JButton[capButton.length];
+
+        tools.setLayout(new GridLayout(2 * capField.length + capButton.length, 1));
+
+        for (int i = 0; i < field.length; i++) {
+            tools.add(new JLabel(capField[i]));
+            field[i] = new JTextField(5);
+            tools.add(field[i]);
         }
 
-        for(i = 0; i < this.tool.length; ++i) {
-            this.tool[i] = new JButton(capButton[i]);
-            this.tool[i].addActionListener(this);
-            this.tools.add(this.tool[i]);
+        for (int i = 0; i < tool.length; i++) {
+            tool[i] = new JButton(capButton[i]);
+            tool[i].addActionListener(this);
+            tools.add(tool[i]);
         }
 
-        this.field[0].setText("17");
-        this.field[1].setText("381");
-        this.field[2].setText("lse-f-91.stu");
-        this.field[3].setText("1");
+        field[0].setText("22");
+        field[1].setText("190");
+        field[2].setText("ear-f-83.stu");
+        field[3].setText("1");
     }
 
     public void draw() {
-        Graphics g = this.screen.getGraphics();
-        int width = Integer.parseInt(this.field[0].getText()) * 10;
-
-        for(int courseIndex = 1; courseIndex < this.courses.length(); ++courseIndex) {
-            g.setColor(this.CRScolor[this.courses.status(courseIndex) > 0 ? 0 : 1]);
+        Graphics g = screen.getGraphics();
+        int width = Integer.parseInt(field[0].getText()) * 10;
+        for (int courseIndex = 1; courseIndex < courses.length(); courseIndex++) {
+            g.setColor(CRScolor[courses.status(courseIndex) > 0 ? 0 : 1]);
             g.drawLine(0, courseIndex, width, courseIndex);
-            g.setColor(this.CRScolor[this.CRScolor.length - 1]);
-            g.drawLine(10 * this.courses.slot(courseIndex), courseIndex, 10 * this.courses.slot(courseIndex) + 10, courseIndex);
+            g.setColor(CRScolor[CRScolor.length - 1]);
+            g.drawLine(10 * courses.slot(courseIndex), courseIndex, 10 * courses.slot(courseIndex) + 10, courseIndex);
         }
-
     }
 
     private int getButtonIndex(JButton source) {
-        int result;
-        for(result = 0; source != this.tool[result]; ++result) {
-        }
-
+        int result = 0;
+        while (source != tool[result]) result++;
         return result;
     }
 
     public void actionPerformed(ActionEvent click) {
-        int iteration;
-        switch(this.getButtonIndex((JButton)click.getSource())) {
+        int clashes;
+
+        switch (getButtonIndex((JButton) click.getSource())) {
             case 0:
-                int slots = Integer.parseInt(this.field[0].getText());
-                this.courses = new CourseArray(Integer.parseInt(this.field[1].getText()) + 1, slots);
-                this.courses.readClashes(this.field[2].getText());
-                this.draw();
+                int slots = Integer.parseInt(field[0].getText());
+                courses = new CourseArray(Integer.parseInt(field[1].getText()) + 1, slots);
+                courses.readClashes(field[2].getText());
+                autoassociator = new Autoassociator(courses);
+                draw();
                 break;
             case 1:
-                int min = 2147483647;
-                int step = 0;
+                iterations = 0;
+                min = Integer.MAX_VALUE;
+                step = 0;
+                for (int i = 1; i < courses.length(); i++) courses.setSlot(i, 0);
 
-                for(iteration = 1; iteration < this.courses.length(); ++iteration) {
-                    this.courses.setSlot(iteration, 0);
-                }
-
-                for(iteration = 1; iteration <= Integer.parseInt(this.field[3].getText()); ++iteration) {
-                    this.courses.iterate(Integer.parseInt(this.field[4].getText()));
-                    this.draw();
-                    int clashes = this.courses.clashesLeft();
+                for (int iteration = 1; iteration <= Integer.parseInt(field[3].getText()); iteration++) {
+                    courses.iterate(Integer.parseInt(field[4].getText()));
+                    draw();
+                    clashes = courses.clashesLeft();
                     if (clashes < min) {
                         min = clashes;
                         step = iteration;
                     }
+                    iterations++;
                 }
 
-                System.out.println("Shift = " + this.field[4].getText() + "\tMin clashes = " + min + "\tat step " + step);
-                this.setVisible(true);
+                String str = "Shift = " + field[4].getText() + "\tMin clashes = " + min + "\tat step " + step;
+                log(str);
+                System.out.println(str);
+                setVisible(true);
+
                 break;
             case 2:
-                 min = 2147483647;
-                 step = 0;
-
-                for(iteration = 1; iteration <= Integer.parseInt(this.field[3].getText()); ++iteration) {
-                    this.courses.iterate(Integer.parseInt(this.field[4].getText()));
-                    this.draw();
-                    int clashes = this.courses.clashesLeft();
+                int temp = Integer.parseInt(field[3].getText());
+                for (int iteration = 1; iteration <= temp; iteration++) {
+                    courses.iterate(Integer.parseInt(field[4].getText()));
+                    draw();
+                    iterations++;
+                    clashes = courses.clashesLeft();
                     if (clashes < min) {
                         min = clashes;
-                        step = iteration;
+                        step = iterations;
                     }
 
                 }
-
-                System.out.println("Shift = " + this.field[4].getText() + "\tMin clashes = " + min + "\tat step " + step);
-                this.setVisible(true);
-
-                break;
+                String s = "Shift = " + field[4].getText() + "\tMin clashes = " + min + "\tat step " + step;
+                System.out.println(s);
+                log(s);
+                setVisible(true);
             case 3:
-                this.courses.iterate(Integer.parseInt(this.field[4].getText()));
-                this.draw();
+                courses.iterate(Integer.parseInt(field[4].getText()));
+                draw();
                 break;
             case 4:
-                System.out.println("Exam\tSlot\tClashes");
-
-                for(iteration = 1; iteration < this.courses.length(); ++iteration) {
-                    System.out.println(iteration + "\t" + this.courses.slot(iteration) + "\t" + this.courses.status(iteration));
-                }
-
-                return;
+                train();
+                log("Trained Amount:" + autoassociator.getTrainCounter());
+                System.out.println(autoassociator.getTrainCounter());
+                break;
             case 5:
+                for(int i = 0;i<courses.getSlots();i++){
+                    if(courses.slotStatus(i)[1]==0){
+                        continue;
+                    }
+                    update(i);
+                }
+                clashes = courses.clashesLeft();
+                System.out.println("Clashes " + clashes);
+                log("Clashes " + clashes);
+                draw();
+                break;
+            case 6:
+                System.out.println("Exam\tSlot\tClashes");
+                for (int i = 1; i < courses.length(); i++)
+                    System.out.println(i + "\t" + courses.slot(i) + "\t" + courses.status(i));
+                break;
+            case 7:
                 System.exit(0);
         }
+    }
 
+    public  void update(int slot) {
+        int[] timeSlots = courses.getTimeSlot(slot);
+        int index = autoassociator.unitUpdate(timeSlots);
+        int[] tempSlots = courses.getTimeSlot(slot);
+        if(timeSlots[index] != tempSlots[index]) {
+            if(timeSlots[index] == 1) {
+                courses.setSlot(index,slot);
+            }else{
+                courses.setSlot(index,random.nextInt(courses.getSlots()+1)-1);
+            }
+        }
+    }
+
+    public void train() {
+        int[][] slots = courses.getAllTimeSlotStatus();
+        for(int i=0; i<slots.length; i++) {
+            System.out.println(slots[i][0] + " " + slots[i][1]);
+        }
+        int min = (int)(((double) (courses.length() - 1)) / (courses.getSlots() + 1) * 0.5);
+        System.out.println(min);
+        for (int i = 0; i < slots.length; i++) {
+            if (slots[i][1] == 0) {
+                if (slots[i][0] > min) {
+                    if (autoassociator.needTrain()) {
+                        int[] temp = courses.getTimeSlot(i);
+                        autoassociator.training(temp);
+                    }
+                }
+            }
+        }
+    }
+
+    public void log(String str){
+        String filename = "logs/log.txt";
+        String content = str;
+        try {
+            FileWriter fileWriter = new FileWriter(filename,true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(content);
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     public static void main(String[] args) {
         new TimeTable();
     }
+
 }

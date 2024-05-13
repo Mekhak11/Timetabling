@@ -1,0 +1,83 @@
+Trained Amount:0
+Trained Amount:0
+Trained Amount:0
+Clashes 9444
+Clashes 9378
+Clashes 9586
+Trained Amount:0
+Shift = 1	Min clashes = 8890	at step 1
+Shift = 1	Min clashes = 8550	at step 2
+Shift = 1	Min clashes = 8094	at step 3
+Shift = 1	Min clashes = 7688	at step 4
+Shift = 1	Min clashes = 7164	at step 5
+Shift = 1	Min clashes = 6438	at step 6
+Shift = 1	Min clashes = 5908	at step 7
+Shift = 1	Min clashes = 5524	at step 8
+Shift = 1	Min clashes = 4990	at step 9
+Shift = 1	Min clashes = 4222	at step 10
+Shift = 1	Min clashes = 3288	at step 11
+Shift = 1	Min clashes = 2838	at step 12
+Shift = 1	Min clashes = 2434	at step 13
+Shift = 1	Min clashes = 1792	at step 14
+Shift = 1	Min clashes = 1378	at step 15
+Shift = 1	Min clashes = 1306	at step 16
+Shift = 1	Min clashes = 1270	at step 17
+Shift = 1	Min clashes = 1270	at step 17
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 1	Min clashes = 1260	at step 19
+Shift = 7	Min clashes = 1260	at step 19
+Shift = 7	Min clashes = 396	at step 55
+Shift = 7	Min clashes = 298	at step 56
+Shift = 7	Min clashes = 198	at step 57
+Shift = 7	Min clashes = 130	at step 58
+Shift = 7	Min clashes = 130	at step 58
+Shift = 7	Min clashes = 130	at step 58
+Shift = 7	Min clashes = 130	at step 58
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62
+Shift = 7	Min clashes = 104	at step 62

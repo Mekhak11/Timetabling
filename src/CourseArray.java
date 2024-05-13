@@ -1,6 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class CourseArray {
     private Course[] elements;
@@ -14,6 +14,10 @@ public class CourseArray {
             this.elements[i] = new Course();
         }
 
+    }
+
+    public int getSlots(){
+        return period;
     }
 
     public void readClashes(String filename) {
@@ -98,9 +102,70 @@ public class CourseArray {
 
     public void printResult() {
         for(int i = 1; i < this.elements.length; ++i) {
-            System.out.println(i + "\t" + this.elements[i].mySlot);
+            System.out.println("" + i + "\t" + this.elements[i].mySlot);
+        }
+    }
+
+    public int[] slotStatus(int slot) {
+        int clashes = 0;
+        int course = 0;
+        int[] result = new int[2];
+
+        for (int i = 1; i<elements.length; i++) {
+            if(elements[i].mySlot == slot) {
+                course++;
+                clashes+=elements[i].clashSize();
+            }
         }
 
-    }
-}
+        result[0] = course;
+        result[1] = clashes;
 
+        return  result;
+    }
+
+    public int[][] getClashFreeTimeSlots() {
+        ArrayList<Integer> slots = new ArrayList<>();
+        for(int i = 0; i < period; i++) {
+            int[] result = slotStatus(i);
+            if(result[1] == 0){
+                slots.add(i);
+            }
+        }
+
+        int[][] clashFreeTimeSlots = new int[slots.size()][elements.length];
+        int index = 0;
+
+        for(int t:slots) {
+            for(int i = 1; i < elements.length; i++) {
+                if(elements[i].mySlot == t){
+                    clashFreeTimeSlots[index][i] = 1;
+                    index++;
+                }
+            }
+        }
+        return  clashFreeTimeSlots;
+    }
+
+    public int[][] getAllTimeSlotStatus() {
+        int[][] timeSlots = new int[period][2];
+        for(int i = 0; i < period; i++) {
+            timeSlots[i] = slotStatus(i);
+        }
+        return timeSlots;
+    }
+
+    public int[] getTimeSlot(int index) {
+        int[] courses = new int[elements.length];
+
+        for(int i = 1; i < elements.length; i++){
+            if (elements[i].mySlot == index) {
+                courses[i] = 1;
+            } else {
+                courses[i] = -1;
+            }
+        }
+        return courses;
+    }
+
+}
