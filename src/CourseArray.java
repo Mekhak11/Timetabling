@@ -67,11 +67,15 @@ public class CourseArray {
     }
 
     public int slot(int index) {
-        return this.elements[index].mySlot;
+        if(this.elements[index]==null) {
+            System.out.println(index + " null");
+        }
+        return  this.elements[index].mySlot;
     }
 
     public void setSlot(int index, int newSlot) {
-        this.elements[index].mySlot = newSlot;
+        if (this.elements[index]!=null)
+            this.elements[index].mySlot = newSlot;
     }
 
     public int maxClashSize(int index) {

@@ -37,7 +37,7 @@ public class Autoassociator {
     }
 
     public int unitUpdate(int neurons[]) {
-        int index = rd.nextInt(neurons.length);
+        int index = rd.nextInt(neurons.length-1) + 1;
         unitUpdate(neurons,index);
         return index;
     }

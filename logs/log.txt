@@ -81,3 +81,114 @@ Shift = 7	Min clashes = 104	at step 62
 Shift = 7	Min clashes = 104	at step 62
 Shift = 7	Min clashes = 104	at step 62
 Shift = 7	Min clashes = 104	at step 62
+StartIndex: 1
+Start Method, Shifts = 10	Iterations = 1	 Clashes = 2498
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 222
+Shift = 10	Min clashes = 222	at step 2
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 228
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 208
+Shift = 10	Min clashes = 208	at step 3
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 178
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 146
+Shift = 10	Min clashes = 146	at step 4
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 158
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 120
+Shift = 10	Min clashes = 120	at step 5
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 98
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 94
+Shift = 10	Min clashes = 94	at step 6
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 94
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 74
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 84
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 88
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 102
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 80
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 74
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 90
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 94
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 94
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 108
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 80
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 78
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 86
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 96
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 90
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 94
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 94
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 118
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 104
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 82
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 84
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 96
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 114
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 88
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 98
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 92
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 112
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 118
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 76
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 110
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 112
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 94
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 76
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 92
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 100
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 100
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 86
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 82
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 102
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 112
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 78
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 104
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 116
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 94
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 84
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 96
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 114
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 94
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 88
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 92
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 102
+Shift = 10	Min clashes = 74	at step 7
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 90
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 62
+Shift = 10	Min clashes = 62	at step 33
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 86
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 90
+Shift = 10	Min clashes = 62	at step 33
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 86
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 78
+Shift = 10	Min clashes = 62	at step 33
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 90
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 78
+Shift = 10	Min clashes = 62	at step 33
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 80
+Continue Method, Shifts = 10	Iterations = 1	 Clashes = 78
+Shift = 10	Min clashes = 62	at step 33
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 88
+Trained Amount:13
