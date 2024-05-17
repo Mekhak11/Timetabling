@@ -8,3 +8,6 @@ However, the min clashes tend to increase after I update one
 timeslot randomly the min clashes are increasing.
 Seems something is not right. I will change the strategies in the future and 
 try again. 
+
+My experiments on file ear-f-83.stu showed that without hopefield network the best result was 64.
+When I implemented hopefield network after update the number of my clashes grew up.

@@ -192,3 +192,34 @@ Continue Method, Shifts = 10	Iterations = 1	 Clashes = 78
 Shift = 10	Min clashes = 62	at step 33
 Step Method, Shifts = 10	Iterations = 1	 Clashes = 88
 Trained Amount:13
+StartIndex: 1
+Start Method, Shifts = 10	Iterations = 3	 Clashes = 228
+Trained Amount:17
+Continue Method, Shifts = 10	Iterations = 3	 Clashes = 146
+Shift = 10	Min clashes = 146	at step 6
+Step Method, Shifts = 10	Iterations = 1	 Clashes = 158
+Continue Method, Shifts = 11	Iterations = 5	 Clashes = 132
+Shift = 11	Min clashes = 130	at step 10
+Step Method, Shifts = 11	Iterations = 1	 Clashes = 118
+Continue Method, Shifts = 11	Iterations = 5	 Clashes = 120
+Shift = 11	Min clashes = 118	at step 13
+Step Method, Shifts = 11	Iterations = 1	 Clashes = 118
+Trained Amount:27
+Continue Method, Shifts = 16	Iterations = 6	 Clashes = 98
+Shift = 16	Min clashes = 90	at step 21
+Step Method, Shifts = 16	Iterations = 1	 Clashes = 108
+Trained Amount:27
+Continue Method, Shifts = 16	Iterations = 6	 Clashes = 102
+Shift = 16	Min clashes = 90	at step 21
+Step Method, Shifts = 16	Iterations = 1	 Clashes = 106
+Update Method, Clashes106
+Clashes 106
+Update Method, Clashes112
+Clashes 112
+Trained Amount:27
+Trained Amount:27
+Trained Amount:27
+Continue Method, Shifts = 18	Iterations = 10	 Clashes = 112
+Shift = 18	Min clashes = 80	at step 37
+Step Method, Shifts = 18	Iterations = 1	 Clashes = 64
+Trained Amount:27
